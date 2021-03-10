@@ -1,0 +1,55 @@
+before_script:
+  - echo "this is before-script"
+
+variables:
+  DOMAIN: langri.com
+
+stages:
+  - build
+  - test
+  - codescan
+  - security
+
+build:
+  before_script:
+    - echo "this is build before_script"
+  stage: build
+  tags:
+    - security
+  only:
+    - foundation
+  script:
+    - echo "mvn clean"
+    - echo "mvn install"
+    - echo "$DOMAIN"
+  after_script:
+    - echo "this is build after_script"
+
+unittest:
+  stage: test
+  tags:
+    - security
+  script:
+    - echo "this is run unit test"
+
+codescan:
+  stage: codescan
+  tags:
+    - security
+  script:
+    - echo "this is codescan"
+    - sleep 5;
+
+security:
+  stage: security
+  tags:
+    - security
+  only:
+    - foundation
+  script:
+    - echo "hello security"
+    - sleep 2;
+
+after_script:
+  - echo "this is after_script"
+  - ech
