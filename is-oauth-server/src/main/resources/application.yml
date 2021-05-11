@@ -1,0 +1,23 @@
+server:
+  port: 7777
+spring:
+  application:
+    name: oauth-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: QQ@13837730156
+    url: jdbc:mysql://sh-cdb-4wtef0js.sql.tencentcdb.com:60308/nyrmt?serverTimezone=Asia/Shanghai
+    hikari:
+      max-lifetime: 50000
+  jpa:
+    generate-ddl: true
+    show-sql: true
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+  redis:
+    host: 192.168.21.128
+    password: lagelangri

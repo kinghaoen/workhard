@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: as-node-server
+
+zuul:
+  routes:
+    api:
+      url: http://127.0.0.1:8888
+  sensitive-headers:

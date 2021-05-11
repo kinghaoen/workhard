@@ -61,5 +61,16 @@ class UserServiceImplTest {
         }
     }
 
+    @Test
+    public void TestDK(){
+        int num = 9331;
+        int reduce =38;
+        for (int i = 0; i < num; i+=38) {
+            System.out.println(num-i);
+            if(i %(38*12) == 0){
+                System.out.println("------------------");
+            }
+        }
+    }
 
 }
